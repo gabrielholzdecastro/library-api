@@ -2,6 +2,7 @@ package com.gabrielholz.libraryapi.api.resources;
 
 import com.gabrielholz.libraryapi.api.dto.BookDTO;
 import com.gabrielholz.libraryapi.api.exception.ApiErros;
+import com.gabrielholz.libraryapi.api.exception.BusinessException;
 import com.gabrielholz.libraryapi.model.entity.Book;
 import com.gabrielholz.libraryapi.service.BookService;
 import org.modelmapper.ModelMapper;
@@ -40,5 +41,10 @@ public class BookController {
         return new ApiErros(bindingResult);
     }
 
+    @ExceptionHandler(BusinessException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiErros handleBusinessException(BusinessException ex) {
+        return new ApiErros(ex);
+    }
 
 }
