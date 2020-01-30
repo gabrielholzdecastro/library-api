@@ -5,6 +5,8 @@ import com.gabrielholz.libraryapi.model.entity.Book;
 import com.gabrielholz.libraryapi.model.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BookServiceImpl implements com.gabrielholz.libraryapi.service.BookService {
 
@@ -20,5 +22,20 @@ public class BookServiceImpl implements com.gabrielholz.libraryapi.service.BookS
             throw new BusinessException("Isbn já cadastrado.");
         }
         return repository.save(book);
+    }
+
+    @Override
+    public Optional<Book> getById(long id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public void delete(Book book) {
+
+    }
+
+    @Override
+    public Book update(Book book) {
+        return null;
     }
 }
