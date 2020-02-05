@@ -57,7 +57,6 @@ public class BookController {
             book = service.update(book);
             return modelMapper.map(book, BookDTO.class);
         }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
