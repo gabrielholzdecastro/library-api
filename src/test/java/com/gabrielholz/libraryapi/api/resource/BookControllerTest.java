@@ -3,6 +3,7 @@ package com.gabrielholz.libraryapi.api.resource;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gabrielholz.libraryapi.api.dto.BookDTO;
 import com.gabrielholz.libraryapi.api.exception.BusinessException;
+import com.gabrielholz.libraryapi.api.resources.BookController;
 import com.gabrielholz.libraryapi.model.entity.Book;
 import com.gabrielholz.libraryapi.service.BookService;
 import org.hamcrest.Matchers;
@@ -40,7 +41,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest
+@WebMvcTest(controllers = BookController.class)
 @AutoConfigureMockMvc
 public class BookControllerTest {
 

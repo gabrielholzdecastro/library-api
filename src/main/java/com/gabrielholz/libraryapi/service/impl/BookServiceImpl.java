@@ -60,4 +60,9 @@ public class BookServiceImpl implements com.gabrielholz.libraryapi.service.BookS
 
         return repository.findAll(example, pageRequest);
     }
+
+    @Override
+    public Optional<Book> getBookByIsbn(String isbn) {
+        return null;
+    }
 }
